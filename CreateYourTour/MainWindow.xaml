@@ -1,0 +1,24 @@
+﻿<Window x:Class="CreateYourTour.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CreateYourTour.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.DataContext>
+        <local:MainViewModel/>
+        <!-- Устанавливаем DataContext -->
+    </Window.DataContext>
+    
+
+    <Grid>
+        <Button x:Name="btnEnter" Content="У меня уже есть аккаунт" HorizontalAlignment="Left" Margin="55,105,0,0" VerticalAlignment="Top" Width="160" Height="100"
+                Command="{Binding EnterCommand}"/>
+        <Button x:Name="btnRegister" Content="Я хочу зарегистрироваться" HorizontalAlignment="Left" Margin="300,105,0,0" VerticalAlignment="Top" Width="160" Height="100"
+                Command="{Binding RegisterCommand}"/>
+        
+        <Frame Name="ToPageEnter" Visibility="Collapsed" Grid.Column="1" Margin="3" BorderBrush="LimeGreen" BorderThickness="2"></Frame>
+    </Grid>
+</Window>
